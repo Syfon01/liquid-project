@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.bg-remove,  .show > .btn-primary.dropdown-toggle.bg-remove{
+  background-color: transparent!important;
+  border:none!important;
+  box-shadow:none!important;
+}
