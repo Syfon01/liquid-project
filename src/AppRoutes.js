@@ -4,6 +4,8 @@ import Spinner from './components/shared/Spinner';
 const Dashboard = React.lazy(() => import('./pages/Dashboard/Index'));
 const Applicant = React.lazy(() => import('./pages/Loan/Applicant'));
 const History = React.lazy(() => import('./pages/Loan/History'));
+
+
 // const BlankPage = React.lazy(() => import('./general-pages/BlankPage'));
 
 function AppRoutes() {

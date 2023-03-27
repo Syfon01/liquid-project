@@ -1809,6 +1809,49 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
+  @font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: local('Material Icons'),
+      local('MaterialIcons-Regular'),
+      url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+      url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+      url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: 'Material Design Icons';
+    src: url('../public/static/icons/materialdesignicons-webfont.7ec5dab7.woff2') format('woff2'),
+         url('../public/static/icons/materialdesignicons-webfont.a0d13d16.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -2280,8 +2323,8 @@ progress {
     flex-shrink: 0;
     width: 100%;
     max-width: 100%;
-    padding-right: calc(var(--bs-gutter-x) * .5);
-    padding-left: calc(var(--bs-gutter-x) * .5);
+    padding-right: calc(var(--bs-gutter-x) * .2);
+    padding-left: calc(var(--bs-gutter-x) * .2);
     margin-top: var(--bs-gutter-y); }
 
 .col {
@@ -3765,7 +3808,7 @@ textarea.form-control-lg {
   -moz-appearance: none;
   appearance: none;
   -webkit-print-color-adjust: exact;
-  color-adjust: exact; }
+  print-color-adjust: exact; }
   .form-check-input[type="checkbox"] {
     border-radius: 0.25em; }
   .form-check-input[type="radio"] {
@@ -4250,20 +4293,20 @@ textarea.form-control-lg {
   border-color: #1F3D83; }
   .btn-primary:hover {
     color: #000;
-    background-color: #c183ff;
-    border-color: #bd7cff; }
+    background-color: #254ba3;
+    border-color: #254ba3; }
   .btn-check:focus + .btn-primary, .btn-primary:focus {
     color: #000;
-    background-color: #c183ff;
-    border-color: #bd7cff;
+    background-color: #254ba3;
+    border-color: #254ba3;
     -webkit-box-shadow: 0 0 0 0.25rem rgba(155, 93, 217, 0.5);
     box-shadow: 0 0 0 0.25rem rgba(155, 93, 217, 0.5); }
   .btn-check:checked + .btn-primary,
   .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active,
   .show > .btn-primary.dropdown-toggle {
     color: #000;
-    background-color: #c58aff;
-    border-color: #bd7cff; }
+    background-color: #254ba3;
+    border-color: #254ba3; }
     .btn-check:checked + .btn-primary:focus,
     .btn-check:active + .btn-primary:focus, .btn-primary:active:focus, .btn-primary.active:focus,
     .show > .btn-primary.dropdown-toggle:focus {
@@ -7419,7 +7462,7 @@ textarea.form-control-lg {
 .link-primary {
   color: #1F3D83; }
   .link-primary:hover, .link-primary:focus {
-    color: #c58aff; }
+    color: #254ba3; }
 
 .link-secondary {
   color: #c3bdbd; }
@@ -11256,14 +11299,13 @@ code {
   border-radius: 4px; }
 
 .page-header {
-  margin: 0 0 1.5rem 0; }
+  margin: 0 0 1rem 0; }
   .page-header .breadcrumb {
     border: 0;
     margin-bottom: 0; }
 
 .page-title {
   color: #152536;
-  font-size: 1.125rem;
   margin-bottom: 0; }
   .page-title .page-title-icon {
     display: inline-block;
@@ -11791,7 +11833,8 @@ code {
     flex-direction: column;
     -webkit-box-align: end;
     -ms-flex-align: end;
-    align-items: end; }
+    /* align-items: end; */
+   }
 
 .sales-mini-tabs {
   border-bottom: none; }
@@ -14125,15 +14168,15 @@ dl {
         -webkit-transition-property: color; }
         .sidebar .nav .nav-item .nav-link img {
           color: inherit; }
-          .sidebar .nav .nav-item .nav-link img.menu-icon {
+          .sidebar .nav .nav-item .nav-link i.menu-icon {
             font-size: 1.125rem;
             line-height: 1;
             margin-left: auto;
             color: #bba8bff5; }
-            .rtl .sidebar .nav .nav-item .nav-link img.menu-icon {
+            .rtl .sidebar .nav .nav-item .nav-link i.menu-icon {
               margin-left: 0;
               margin-right: auto; }
-            .sidebar .nav .nav-item .nav-link img.menu-icon:before {
+            .sidebar .nav .nav-item .nav-link i.menu-icon:before {
               vertical-align: middle; }
           .sidebar .nav .nav-item .nav-link i.menu-arrow {
             font: normal normal normal 24px/1 "Material Design Icons";
@@ -14424,3 +14467,12 @@ dl {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1; }
+
+  .sidebar .nav .nav-item .nav-link img.menu-icon {
+    margin-left: auto;
+    margin-right: 0; }
+
+  .nav-link.menu-expanded i.menu-arrow{
+    transform: rotate(-90deg);
+    transition: transform 0.25s linear;
+  }

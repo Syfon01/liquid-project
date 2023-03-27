@@ -3,6 +3,10 @@ import { Link, useLocation } from "react-router-dom";
 import { Collapse } from "react-bootstrap";
 import { Trans } from "react-i18next";
 import dashboardIcon from "../../assets/images/my-img/home.svg";
+import menuIcon from "../../assets/images/my-img/activity.svg";
+import docIcon from "../../assets/images/my-img/doc.svg";
+
+
 
 function Sidebar() {
   const location = useLocation();
@@ -87,6 +91,7 @@ function Sidebar() {
             <span className="menu-title">
               <Trans>Dashboard</Trans>
             </span>
+            
             <img src={dashboardIcon} className="menu-icon" alt="home" />
           </Link>
         </li>
@@ -102,7 +107,8 @@ function Sidebar() {
               <Trans>Loans</Trans>
             </span>
             <i className="menu-arrow"></i>
-            <i className="mdi mdi-crosshairs-gps menu-icon"></i>
+            <img src={menuIcon} className="menu-icon" alt="home" />
+
           </div>
           <Collapse in={menuState.basicUiMenuOpen}>
             <ul className="nav flex-column sub-menu">
@@ -138,7 +144,7 @@ function Sidebar() {
             <span className="menu-title">
               Documents
             </span>
-            <img src={dashboardIcon} className="menu-icon" alt="home" />
+            <img src={docIcon} className="menu-icon" alt="home" />
           </Link>
         </li>
       </ul>
