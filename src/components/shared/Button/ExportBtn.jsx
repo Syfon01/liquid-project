@@ -3,10 +3,10 @@ import React from 'react'
 const ExportButton = ({ onExport }) => {
   return (
     <button
-      className="flex items-center py-2.5 mb-4 mr-2 btn-export bg-primary50 text-primary700"
+      className="d-flex items-center py-2.5 mb-4 mr-2 btn-primary btn"
       onClick={(e) => onExport(e.target.value)}
     >
-      <i className='material-icons'> export</i>
+      <i className='material-icons me-2'>download</i>
       {/* <img src={DownloadIcon} className="mr-2 text-primary700" alt="export" srcSet="" /> */}
       Export
     </button>

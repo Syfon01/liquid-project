@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import DataTable from "react-data-table-component";
-import SortIcon from "../../assets/images/my-img/menu.svg";
+import SortIcon from "../../assets/images/my-img/sort.svg";
 import SearchTable from "./SearchTable";
 import DatePicker from "./DatePicker";
 import ExportBtn from "../shared/Button/ExportBtn.jsx";
@@ -74,12 +74,13 @@ const actionsMemo = useMemo(() => <ExportBtn onExport={() => downloadCSV(data)} 
   
   return (
     <>
-      <div className="py-4">
+    <div className="bg-white p-3">
+    <div className="">
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "space-between",
+            justifyContent: "end",
             width: "100%",
             marginBottom: "10px",
             flexWrap:"wrap",
@@ -87,30 +88,30 @@ const actionsMemo = useMemo(() => <ExportBtn onExport={() => downloadCSV(data)} 
           className="space-y-2"
         >
           
-          <div className="w-full md:w-[35%]">
+          <div className="w-100%" style={{width:"300px"}}>
             <SearchTable
               SearchTable={(e) => setSearchVal(e.target.value)}
               filteredText={searchVal}
               placeholder={searchPlaceholder}
             />
           </div>
-          <div className="flex items-center">
-            <div className="w-full mr-3">
-              <DatePicker />
+          <div className="d-flex items-center">
+            <div className="mr-3">
+              {/* <DatePicker /> */}
             </div>
             {/* <p>Filter</p> */}
           </div>
         </div>
       </div>
 
-      <div className="pt-4 outlet">
+      <div className="table">
         <DataTable
-          className="border-y table-radius"
+          className=""
           responsive
           striped
           highlightOnHover
           title={<HeaderTitle title={title} userCount={userCount} countTitle={countTitle}/>}
-          actions={<HeaderAction actionMemo={actionsMemo} columnBtn={columnBtn}/>}
+          actions={<HeaderAction actionMemo={actionsMemo} />}
           columns={columns}
           data={search(data)}
           defaultSortFieldId={1}
@@ -120,6 +121,8 @@ const actionsMemo = useMemo(() => <ExportBtn onExport={() => downloadCSV(data)} 
           customStyles={customStyles}
         />
       </div>
+    </div>
+      
     </>
   );
 };

@@ -2,15 +2,15 @@ import React from 'react'
 
 const HeaderTitle = ({title,userCount, countTitle}) => {
   return (
-    <div className='flex items-center'>
-        <div>
+    <div className='d-flex items-center'>
+        <h4>
             {title}
-        </div>
+        </h4>
         
         {userCount > 0 && 
-            <div className='ml-2 text-xs font-medium rounded-[50px] bg-primary50 text-primary700 py-0.5 px-2'>
+            <div className='ms-2 text-xs fw-medium rounded-[50px] text-secondary py-0.5 px-2'>
             
-                {userCount > 1 ?
+               ({userCount > 1 ?
                     <span>
                         {userCount} 
                         <span className='ml-0.5'>{countTitle}</span>
@@ -20,7 +20,7 @@ const HeaderTitle = ({title,userCount, countTitle}) => {
                         {userCount} 
                         <span className='ml-0.5'>{countTitle}</span>
                     </span>
-                }
+                })
             </div>
         }
 

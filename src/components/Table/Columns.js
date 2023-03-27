@@ -3,44 +3,48 @@ import { NavLink } from "react-router-dom";
 
 export const Columns = [
   {
-    // id: 0,
-    name: "First, Last Name ",
+    name: "S/N",
+    selector: (row) => (row.id ? row.id : ""),
+    sortable: true,
+    reorder: true,
+    omit: false,
+    width:"5rem"
+  },
+  {
+    name: "Reference",
+    selector: (row) => (row.ref ? row.ref : ""),
+    sortable: true,
+    reorder: true,
+    omit: false,
+  },
+
+  {
+    name: "User",
+    selector: (row) => (row.user ? row.user : ""),
+    sortable: true,
+    reorder: true,
+    omit: false,
+  },
+  {
+    name: "Amount",
+    selector: (row) => (row.amount ? row.amount : ""),
+    sortable: true,
+    reorder: true,
+    omit: false,
+  },
+  {
+    name: "Description",
     cell: (row) => (
       <div className="flex items-center">
-        {row.img && (
-          <div className="mr-1.5">
-            <img
-              height="25px"
-              width="25px"
-              alt={row.firstName}
-              src={`${row.img ? row.img : ""}`}
-            />
-          </div>
-        )}
-
         <div>
-          <span className="font-semibold">{`${row.firstname} ${row.lastname}`}</span>{" "}
+          <span className="font-semibold">{`${row.description? row.description : " " }`}</span>{" "}
           <br />
-          <span className="">{`${row.country}`}</span>
+          <span className="">{`${row.tag ? row.tag : " "}`}</span>
         </div>
       </div>
     ),
 
-    sortable: true,
-    reorder: true,
-    omit: false,
-  },
-
-  {
-    name: "Phone Number",
-    selector: (row) => (row.phone ? row.phone : ""),
-    sortable: true,
-    reorder: true,
-    omit: false,
-  },
-  {
-    name: "Email Address",
-    selector: (row) => row.email,
+    minWidth: "12rem",
     sortable: true,
     // right: true,
     reorder: true,
@@ -48,40 +52,27 @@ export const Columns = [
   },
 
   {
-    name: "Last Activity",
-    selector: (row) => (row.last_activity ? row.last_activity : " "),
+    name: "Date",
+    selector: (row) => (row.date ? row.date : " "),
     sortable: true,
     // right: true,
     reorder: true,
     omit: false,
   },
-  {
-    name: "KYC Level",
-    selector: (row) => (
-      <div className="py-1">
-        <span className="px-3 py-1 my-2 rounded-full bg-[#ECFDF3] text-[#027A48] font-medium flex items-center">
-          <span>{row.kyc ? row.kyc : " "}</span>
-        </span>
-      </div>
-    ),
-    sortable: true,
-    center: true,
-    reorder: true,
-    omit: false,
-  },
+  
   {
     name: " ",
     button: true,
     selector: (row) => (
       <NavLink
-        to={`/customer/${row.id}`}
-        className="font-medium btn font-sm view-btn"
+        to={`/${row.id}`}
+        className="font-medium btn btn-outline-primary px-3 py-2"
         rel="noopener noreferrer"
       >
         View
       </NavLink>
     ),
-    center: true,
+    left:true ,
     reorder: true,
     omit: false,
   },
