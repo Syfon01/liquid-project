@@ -14,7 +14,6 @@ function App() {
   const [isFullPageLayout, setIsFullPageLayout] = useState(false);
 
 
-// const history = useHistory()
 const url =location.pathname;
 console.log(url)
 
