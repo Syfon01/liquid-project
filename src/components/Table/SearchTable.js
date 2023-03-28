@@ -6,7 +6,7 @@ const SearchTable = ({ SearchTable, filteredText, placeholder }) => {
     <>
       <div className="input-group mb-3">
         <span className="input-group-text bg-white" id="basic-addon1">
-          <img src={SearchIcon} />
+          <img src={SearchIcon}  alt="search"/>
         </span>
         <input
           onChange={SearchTable}
