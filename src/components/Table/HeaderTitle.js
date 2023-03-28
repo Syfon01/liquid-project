@@ -8,20 +8,20 @@ const HeaderTitle = ({title,userCount, countTitle}) => {
         </h4>
         
         {userCount > 0 && 
-            <div className='ms-2 text-xs fw-medium rounded-[50px] text-secondary py-0.5 px-2'>
+            <h4 className='ms-1 fw-medium text-secondary py-0.5 px-2'>
             
                ({userCount > 1 ?
                     <span>
                         {userCount} 
-                        <span className='ml-0.5'>{countTitle}</span>
+                        <span>{countTitle}</span>
                     </span>
                     : 
                     <span>
                         {userCount} 
-                        <span className='ml-0.5'>{countTitle}</span>
+                        <span>{countTitle}</span>
                     </span>
                 })
-            </div>
+            </h4>
         }
 
     </div>

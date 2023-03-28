@@ -37,9 +37,9 @@ export const Columns = [
     cell: (row) => (
       <div className="flex items-center">
         <div>
-          <span className="font-semibold">{`${row.description? row.description : " " }`}</span>{" "}
+          <span className="fw-semibold">{`${row.description? row.description : " " }`}</span>{" "}
           <br />
-          <span className="">{`${row.tag ? row.tag : " "}`}</span>
+          <span className="text-secondary fw-medium">{`${row.tag ? row.tag : " "}`}</span>
         </div>
       </div>
     ),
